@@ -1,8 +1,10 @@
+#include <iostream>
 #include <vector>
+using namespace std;
 
 class Solution {
 public:
-    void reverseString(std::vector<char>& s) {
+    void reverseString(vector<char>& s) {
         // Two pointers from each end, swap characters
 
         int i = 0;
@@ -10,7 +12,7 @@ public:
 
         while(i < j) {
             // swap letters
-            int temp = s[i];
+            char temp = s[i];
             s[i] = s[j];
             s[j] = temp;
 
@@ -23,5 +25,12 @@ public:
 
 int main() {
     Solution s;
-    s.reverseString()
-}
+    vector<char> v{'B','a','s','e','b','a','l','l'};
+
+    s.reverseString(v);
+    for (char c : v) {
+        cout << c;
+    }
+    cout << endl;
+    return 0;
+};
