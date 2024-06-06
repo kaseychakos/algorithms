@@ -8,6 +8,7 @@ ASAN:=n
 UBSAN:=n
 EXTENSION:=
 TEST_ENV:=
+BUILD_PATH:=
 CFLAGS:=
 AGGRESSIVE_WARNINGS=n
 
@@ -43,13 +44,16 @@ ifneq ($(CC),pgcc)
         endif
 endif
 
-tests$(EXTENSION): ../../munit/munit.h ../../munit/munit.c tests.c
-	$(CC) $(CFLAGS) -o $@.out ../../munit/munit.c tests.c
+tests$(EXTENSION): ./munit/munit.h ./munit/munit.c tests.c
+	$(CC) $(CFLAGS) -o $@.out ./munit/munit.c tests.c
 
 test:
 	$(TEST_ENV) ./tests$(EXTENSION)
 
 clean:
 	rm -f tests$(EXTENSION)
+
+build:
+        $(BUILD_PATH) $(CC) $(CFLAGS) -o $@.out $@.c
 
 all: tests$(EXTENSION)

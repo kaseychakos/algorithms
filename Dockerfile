@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt-get update
-RUN apt-get install -y build-essential
+RUN apt-get install -y build-essential gdb
 #RUN apt install -y make gcc gdb 
 
 CMD [ "/bin/bash" ]
