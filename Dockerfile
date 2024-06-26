@@ -1,7 +1,8 @@
-FROM ubuntu:latest
+FROM ubuntu:devel
 
-RUN apt-get update
-RUN apt-get install -y build-essential gdb
+RUN apt-get update \
+    && apt-get install -y build-essential gdb \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 #RUN apt install -y make gcc gdb 
 
 CMD [ "/bin/bash" ]

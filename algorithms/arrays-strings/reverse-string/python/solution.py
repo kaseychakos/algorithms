@@ -2,7 +2,7 @@ from typing import List
 
 
 class Solution:
-    def reverseString(self, s: List[str]) -> None:
+    def reverse_string(self, s: List[str]) -> None:
         """
         Do not return anything, modify s in-place instead.
         """
@@ -10,6 +10,6 @@ class Solution:
 
 arr = ["Python", "Baseball", "Golf", "Summer" ]
 s = Solution()
-s.reverseString(arr)
+s.reverse_string(arr)
 
 print(arr)
